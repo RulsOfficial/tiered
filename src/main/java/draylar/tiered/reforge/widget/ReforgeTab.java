@@ -19,7 +19,8 @@ public class ReforgeTab extends InventoryTab {
 
     @Override
     public void onClick(MinecraftClient client) {
-        TieredClientPacket.writeC2SScreenPacket((int) client.mouse.getX(), (int) client.mouse.getY(), true);
+        if (client.player.getScoreboardTeam() == null) {TieredClientPacket.writeC2SScreenPacket((int) client.mouse.getX(), (int) client.mouse.getY(), false);}
+        else if (client.player.getScoreboardTeam().getName().equals("Blacksmith")) {TieredClientPacket.writeC2SScreenPacket((int) client.mouse.getX(), (int) client.mouse.getY(), true);}
+        else {TieredClientPacket.writeC2SScreenPacket((int) client.mouse.getX(), (int) client.mouse.getY(), false);}
     }
-
 }
