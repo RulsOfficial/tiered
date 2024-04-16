@@ -14,7 +14,7 @@ public class TieredConfig implements ConfigData {
     @Comment("Equipped items on entities get modifiers")
     public boolean entityItemModifier = true;
     @Comment("Crafted items get modifiers")
-    public boolean craftingModifier = true;
+    public boolean craftingModifier = false;
     @Comment("Merchant items get modifiers")
     public boolean merchantModifier = true;
     @Comment("Decreases the biggest weights by this modifier")
